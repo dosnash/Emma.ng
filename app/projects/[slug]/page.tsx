@@ -12,9 +12,15 @@ type ProjectDetailPageProps = {
   }
 }
 
-export const metadata: Metadata = {
-  title: "Project Case Study",
-  description: "A project case study with overview, tags, screenshots, and next-step contact CTA."
+export async function generateMetadata({ params }: ProjectDetailPageProps): Promise<Metadata> {
+  const project = projects.find((item) => item.slug === params.slug)
+  if (!project) {
+    return { title: "Project Not Found" }
+  }
+  return {
+    title: `${project.name} | Case Study`,
+    description: project.description
+  }
 }
 
 export function generateStaticParams() {
@@ -33,13 +39,13 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
   return (
     <>
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-7xl">
           <nav className="flex flex-wrap items-center gap-2 text-sm font-semibold text-[#52525b]">
-            <Link href="/" className="transition hover:text-[#ff5535]">
+            <Link href="/" className="transition hover:text-[#2a52c4]">
               Home
             </Link>
             <span aria-hidden="true">/</span>
-            <Link href="/projects" className="transition hover:text-[#ff5535]">
+            <Link href="/projects" className="transition hover:text-[#2a52c4]">
               Projects
             </Link>
             <span aria-hidden="true">/</span>
@@ -50,7 +56,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full bg-[#fff1ee] px-3 py-1 text-xs font-bold text-[#ff5535]"
+                className="rounded-full bg-[#eff3fd] px-3 py-1 text-xs font-bold text-[#2a52c4]"
               >
                 {tag}
               </span>
@@ -59,7 +65,7 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
 
           <div className="mt-6 grid gap-8 lg:grid-cols-[1fr_0.42fr] lg:items-end">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#ff5535]">
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#2a52c4]">
                 {project.industry}
               </p>
               <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-[#0a0a0a] sm:text-4xl">
@@ -74,14 +80,14 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
               href={project.liveUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#ff5535] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#e8482c]"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#2a52c4] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1c3fa6]"
             >
               Visit live project
               <ExternalLink className="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
 
-          <div className="mt-10 overflow-hidden rounded-xl border border-[#ffd6ce] bg-[#ffe1d9] p-4">
+          <div className="mt-10 overflow-hidden rounded-xl border border-[#2a52c4]/15 bg-[#eff3fd] p-4">
             <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-white">
               <ProjectImage
                 project={project}
@@ -94,10 +100,10 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
         </div>
       </section>
 
-      <section className="bg-[#fff7f5] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-        <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-[0.48fr_1fr]">
+      <section className="bg-[#f7f9fe] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.48fr_1fr]">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#ff5535]">
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#2a52c4]">
               Project overview
             </p>
             <h2 className="mt-3 text-3xl font-black tracking-tight text-[#0a0a0a]">
@@ -110,9 +116,9 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
               {project.services.map((service) => (
                 <div
                   key={service}
-                  className="rounded-lg border border-[#ffd6ce] bg-white p-4"
+                  className="rounded-lg border border-[#2a52c4]/15 bg-white p-4"
                 >
-                  <Sparkles className="h-4 w-4 text-[#ff5535]" aria-hidden="true" />
+                  <Sparkles className="h-4 w-4 text-[#2a52c4]" aria-hidden="true" />
                   <p className="mt-3 text-sm font-black text-[#0a0a0a]">{service}</p>
                 </div>
               ))}
@@ -122,23 +128,23 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
       </section>
 
       <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-7xl">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#ff5535]">
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#2a52c4]">
                 Homepage preview
               </p>
               <h2 className="mt-3 text-3xl font-black tracking-tight text-[#0a0a0a]">
                 Nav, hero, and first impression
               </h2>
             </div>
-            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#ffd6ce] px-4 py-2 text-sm font-bold text-[#52525b]">
-              <Layers className="h-4 w-4 text-[#ff5535]" aria-hidden="true" />
+            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#2a52c4]/20 px-4 py-2 text-sm font-bold text-[#52525b]">
+              <Layers className="h-4 w-4 text-[#2a52c4]" aria-hidden="true" />
               Live capture
             </div>
           </div>
 
-          <div className="mt-8 overflow-hidden rounded-xl border border-[#ffd6ce] bg-[#ffe1d9] p-4">
+          <div className="mt-8 overflow-hidden rounded-xl border border-[#2a52c4]/15 bg-[#eff3fd] p-4">
             <div className="relative aspect-[16/9] overflow-hidden rounded-lg bg-white">
               <ProjectImage
                 project={project}
@@ -152,14 +158,14 @@ export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
       </section>
 
       <section className="bg-white px-4 pb-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-5xl rounded-lg border border-[#ffd6ce] bg-[#fff1ee] px-6 py-12 text-center sm:px-10">
+        <div className="mx-auto max-w-7xl rounded-[24px] border border-[#2a52c4]/20 bg-[#eff3fd] px-6 py-12 text-center sm:px-10">
           <h2 className="text-2xl font-extrabold tracking-tight text-[#0a0a0a] sm:text-3xl">
             Want to build something similar?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#52525b]">
             Share your idea and get a clear path from concept to launch.
           </p>
-          <ContactButton className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#ff5535] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#e8482c]">
+          <ContactButton className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#2a52c4] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1c3fa6]">
             Start your project
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </ContactButton>

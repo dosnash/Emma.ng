@@ -12,10 +12,10 @@ type ProjectCardProps = {
 }
 
 const tagStyles = [
-  "bg-[#fff1ee] text-[#ff5535]",
-  "bg-[#fff1ee] text-[#ff5535]",
-  "bg-[#fff1ee] text-[#ff5535]",
-  "bg-[#fff1ee] text-[#ff5535]"
+  "bg-[#eff3fd] text-[#2a52c4]",
+  "bg-[#eff3fd] text-[#2a52c4]",
+  "bg-[#eff3fd] text-[#2a52c4]",
+  "bg-[#eff3fd] text-[#2a52c4]"
 ]
 
 export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
@@ -23,7 +23,7 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
 
   return (
     <motion.article
-      className="group rounded-lg border border-[#ffd6ce] bg-white p-5 transition-colors hover:border-[#ff5535]/45 sm:p-6"
+      className="group rounded-2xl bg-white p-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 sm:p-6"
       initial={reduceMotion ? false : { opacity: 0, y: 22 }}
       whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
       whileHover={reduceMotion ? undefined : { y: -4 }}
@@ -32,7 +32,7 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
     >
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#ff5535]">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#2a52c4]">
             {project.industry}
           </p>
           <h3 className="mt-2 text-xl font-extrabold tracking-tight text-[#0a0a0a]">
@@ -41,7 +41,7 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
         </div>
         <Link
           href={`/projects/${project.slug}`}
-          className="inline-flex items-center gap-2 text-sm font-bold text-[#ff5535] transition hover:text-[#e8482c]"
+          className="inline-flex items-center gap-2 text-sm font-bold text-[#2a52c4] transition hover:text-[#1c3fa6]"
         >
           View details
           <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
@@ -61,7 +61,7 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
 
       <p className="mt-5 max-w-3xl text-sm leading-6 text-[#52525b]">{project.description}</p>
 
-      <div className="mt-6 w-full overflow-hidden rounded-lg border border-[#ffd6ce] bg-[#ffe1d9] p-3">
+      <div className="mt-6 w-full overflow-hidden rounded-xl bg-[#eff3fd] border border-[#2a52c4]/10 p-3">
         <div className="relative aspect-video w-full overflow-hidden rounded-md bg-white">
           <ProjectImage
             project={project}

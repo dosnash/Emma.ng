@@ -15,93 +15,93 @@ export type Resource = {
 
 export const resources: Resource[] = [
   {
-    slug: "website-launch-checklist",
-    label: "Launch Guide",
-    title: "Website Launch Checklist",
+    slug: "saas-landing-page-blueprint",
+    label: "SaaS Playbook",
+    title: "SaaS Landing Page Blueprint",
     description:
-      "A practical checklist for launching a polished website without missing SEO, speed, trust, or conversion basics.",
-    readTime: "8 min read",
-    audience: "Founders, service businesses, and teams preparing to go live",
+      "A high-converting framework for SaaS landing pages. Perfect for founders launching a new tool or looking to boost sign-ups.",
+    readTime: "7 min read",
+    audience: "SaaS founders and developers who want more signups",
     highlights: [
-      "Pre-launch page and content checks",
-      "SEO, analytics, and metadata essentials",
-      "Mobile, performance, and handoff review"
+      "High-converting SaaS Hero sections",
+      "Structuring social proof for trust",
+      "Clear call-to-actions (CTAs)"
     ],
     sections: [
       {
-        title: "Content and page readiness",
+        title: "The High-Converting Hero",
         body:
-          "Before launch, every page should have a clear job. The homepage should explain the offer fast, service pages should answer buyer questions, and contact paths should be easy to find from every important screen.",
+          "Your hero section is the single most important part of your SaaS page. It needs to convey what your tool does, who it's for, and the ultimate value it delivers in under 3 seconds.",
         bullets: [
-          "Confirm page titles, headings, buttons, and contact details are final",
-          "Check every internal link, external link, form, and CTA",
-          "Remove placeholder text, unused sections, draft pages, and test media"
+          "Use a direct, benefit-focused headline instead of creative vagueness",
+          "Show a high-quality product screenshot or interface mockup immediately",
+          "Provide a single, low-friction primary call to action (e.g. 'Start Free Trial')"
         ]
       },
       {
-        title: "SEO and tracking basics",
+        title: "Strategic Social Proof",
         body:
-          "A clean launch gives search engines and analytics tools the right signals from day one. Keep metadata specific, avoid duplicate titles, and make sure performance and indexing are not blocked.",
+          "Founders often put logos at the bottom of the page, but serious buyers need to see credibility early. Display client logos or testimonials directly beneath the hero section.",
         bullets: [
-          "Set titles, meta descriptions, open graph images, sitemap, and robots rules",
-          "Connect analytics, search console, form tracking, and conversion events",
-          "Review image alt text, schema opportunities, and canonical URLs"
+          "Use recognizable brand logos or customer face avatars for trust",
+          "Feature concrete testimonials that call out specific metrics (e.g. 'reduced load time by 40%')",
+          "Include a rating badge (e.g. 5 stars on G2 or Product Hunt)"
         ]
       },
       {
-        title: "Trust and conversion review",
+        title: "Features vs. Outcomes",
         body:
-          "A beautiful website still needs trust signals. The final pass should check proof, clarity, friction, and whether a real visitor can confidently take the next step.",
+          "Features describe what your SaaS does. Outcomes describe how it helps the customer. Always structure your layout around outcomes, and map your features as details.",
         bullets: [
-          "Add testimonials, client logos, guarantees, process notes, or project examples",
-          "Test contact forms, booking links, payment flows, and thank-you states",
-          "Review mobile spacing, button visibility, font sizes, and page load speed"
+          "Headline the direct benefit first, then explain the technology behind it",
+          "Use interactive demos or short video loops instead of static bullet points",
+          "Address common customer objections directly in the copy"
         ]
       }
     ]
   },
   {
-    slug: "homepage-conversion-playbook",
-    label: "Conversion Playbook",
-    title: "Homepage Conversion Playbook",
+    slug: "nextjs-core-web-vitals-guide",
+    label: "Next.js Guide",
+    title: "Next.js Core Web Vitals Optimization Guide",
     description:
-      "A simple framework for shaping a homepage that quickly explains what you do, why it matters, and how visitors should act.",
-    readTime: "10 min read",
-    audience: "Businesses that need more qualified leads from their website",
+      "The ultimate checklist for optimizing Next.js websites for speed, Core Web Vitals, and search engine optimization.",
+    readTime: "9 min read",
+    audience: "Next.js developers building SEO-sensitive marketing sites",
     highlights: [
-      "Hero message structure",
-      "Proof and offer hierarchy",
-      "CTA placement for serious buyers"
+      "Image and Font optimization pipelines",
+      "Dynamic imports & code splitting",
+      "Streaming and loading states"
     ],
     sections: [
       {
-        title: "Make the hero obvious",
+        title: "Optimize Assets and Media",
         body:
-          "Your hero should answer three questions without making visitors think too hard: what you offer, who it is for, and what result they can expect. Keep the headline specific and put supporting detail in the paragraph.",
+          "Large assets are the number one cause of high Largest Contentful Paint (LCP). Use the built-in Next.js optimization modules to automatically compress and crop files.",
         bullets: [
-          "Use a direct headline that names the offer or outcome",
-          "Add one short paragraph that explains the customer and result",
-          "Place one primary CTA and one proof signal above the fold"
+          "Always use next/image for automatic WebP formatting and layout stability",
+          "Use next/font to host Google Fonts locally and prevent layout shifts (CLS)",
+          "Load critical hero images with priority tags to trigger instant download"
         ]
       },
       {
-        title: "Build trust before the pitch gets long",
+        title: "Split Code and Delay Non-Critical JS",
         body:
-          "Visitors need reasons to believe you before they read every detail. Show proof early and make it concrete, especially if the business sells services, consulting, or high-trust products.",
+          "High Total Blocking Time (TBT) hurts search rankings. Split large modules into client components that only load when needed or defer script loading.",
         bullets: [
-          "Use project screenshots, client names, testimonials, numbers, or process proof",
-          "Show service categories in a way that makes comparison easy",
-          "Avoid generic claims that do not connect to a visible example"
+          "Load heavy third-party widgets using next/script with lazyOnload strategy",
+          "Use next/dynamic to dynamically import components below the fold",
+          "Reduce client-side bundle size by using server components for layout rendering"
         ]
       },
       {
-        title: "Guide the next action",
+        title: "Incorporate Streaming & Pre-rendering",
         body:
-          "A homepage should not end with uncertainty. Repeat the main CTA after important proof sections and make sure the action matches the buying stage, whether that is booking, requesting a quote, or viewing work.",
+          "A fast initial load keeps visitors on your page. Choose the right page rendering models (ISR, SSR, SSG) and stream slow data sources.",
         bullets: [
-          "Repeat CTAs after the hero, work examples, services, and final section",
-          "Use clear action text like Start your project or Request a quote",
-          "Keep forms short and ask only for details needed to start the conversation"
+          "Utilize static generation (SSG) or incremental static regeneration (ISR) for pages",
+          "Stream slow data using React Suspense boundaries and beautiful loading skeletons",
+          "Ensure metadata is fully populated statically to optimize SEO crawlers"
         ]
       }
     ]

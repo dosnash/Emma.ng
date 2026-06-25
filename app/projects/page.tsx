@@ -6,17 +6,18 @@ import ProjectCard from "@/components/ProjectCard"
 import { projects } from "@/lib/projects"
 
 export const metadata: Metadata = {
-  title: "Projects",
-  description: "Explore shipped websites and web apps built for businesses and startups."
+  title: "Projects & Case Studies",
+  description:
+    "Browse Emmanuel Ovansa's portfolio of conversion-focused websites and web apps — SaaS, e-commerce, and service platforms built with Next.js, React, and WordPress."
 }
 
 export default function ProjectsPage() {
   return (
     <>
       <section className="overflow-hidden bg-white px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
-        <div className="mx-auto max-w-5xl">
-          <MotionReveal className="relative max-w-5xl overflow-hidden pb-8">
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#ff5535]">
+        <div className="mx-auto max-w-7xl">
+          <MotionReveal className="relative max-w-7xl overflow-hidden pb-8">
+            <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#2a52c4]">
               Selected work
             </p>
             <h1 className="mt-5 text-3xl font-extrabold tracking-tight text-[#0a0a0a] sm:text-4xl">
@@ -50,14 +51,14 @@ export default function ProjectsPage() {
       </section>
 
       <section className="bg-white px-4 pb-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-5xl rounded-lg border border-[#ffd6ce] bg-[#fff1ee] px-6 py-12 text-center sm:px-10">
+        <div className="mx-auto max-w-7xl rounded-[24px] border border-[#2a52c4]/20 bg-[#eff3fd] px-6 py-12 text-center sm:px-10">
           <h2 className="text-2xl font-extrabold tracking-tight text-[#0a0a0a] sm:text-3xl">
             Ready to start your project?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#52525b]">
             Let&apos;s build something polished, fast, and easy for your customers to use.
           </p>
-          <ContactButton className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#ff5535] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#e8482c]">
+          <ContactButton className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#2a52c4] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1c3fa6]">
             Get Started
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </ContactButton>

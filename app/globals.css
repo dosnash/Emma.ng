@@ -4,12 +4,12 @@
 
 :root {
   --background: #ffffff;
-  --surface: #fff1ee;
-  --surface-soft: #fff7f5;
+  --surface: #eff3fd;
+  --surface-soft: #f7f9fe;
   --text-primary: #0a0a0a;
   --text-secondary: #52525b;
-  --accent: #ff5535;
-  --border: rgba(255, 85, 53, 0.18);
+  --accent: #2a52c4;
+  --border: rgba(42, 82, 196, 0.15);
 }
 
 html {

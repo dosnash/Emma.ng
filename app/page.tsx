@@ -309,15 +309,15 @@ export default function HomePage() {
 
       <section className="bg-[#eff3fd] px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
         <MotionReveal className="mx-auto max-w-7xl text-center">
-          <h2 className="mx-auto max-w-4xl text-[26px] font-black leading-[1.3] tracking-tight text-[#050505] sm:text-[36px] md:text-[42px] flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
+          <h2 className="mx-auto max-w-4xl text-[26px] font-black leading-[0.1] tracking-tight text-[#050505] sm:text-[36px] md:text-[42px] flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
             <span>Delivering quality</span>
             <span className="inline-block my-1 shrink-0">
               <Image
-                src="/porsche.png"
+                src="/porshe.png"
                 alt="Porsche car design"
-                width={132}
+                width={200}
                 height={44}
-                className="h-7 w-auto object-contain mix-blend-multiply sm:h-9 md:h-11"
+                className="h-10 w-auto object-contain mix-blend-multiply sm:h-14 md:h-28"
               />
             </span>
             <span>results for Founders across the globe.</span>

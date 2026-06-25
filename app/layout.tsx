@@ -1,14 +1,9 @@
 import type { Metadata } from "next"
-import { DM_Sans } from "next/font/google"
 import "./globals.css"
 import { ContactModalProvider } from "@/components/ContactModal"
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  display: "swap"
-})
 
 export const metadata: Metadata = {
   title: {
@@ -27,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={dmSans.className}>
+      <body>
         <ContactModalProvider>
           <Navbar />
           <main>{children}</main>

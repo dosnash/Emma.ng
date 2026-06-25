@@ -1,0 +1,100 @@
+
+> emma-portfolio@1.0.0 dev
+> next dev --hostname 127.0.0.1 --port 3000
+
+  ▲ Next.js 14.2.35
+  - Local:        http://127.0.0.1:3000
+  - Network:      http://127.0.0.1:3000
+
+ ✓ Starting...
+ ✓ Ready in 8.9s
+ ○ Compiling / ...
+ ✓ Compiled / in 8.2s (1426 modules)
+ GET / 200 in 10651ms
+ GET / 200 in 137ms
+ ✓ Compiled in 6.1s (1440 modules)
+ GET / 200 in 1078ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 1912ms (1429 modules)
+ GET /sw.js 404 in 2732ms
+ ○ Compiling /icon.jpg ...
+ ✓ Compiled /icon.jpg in 865ms (780 modules)
+ GET /icon.jpg?a6cbca9bf8fae97b 200 in 1500ms
+ GET /icon.jpg?a6cbca9bf8fae97b 200 in 240ms
+ GET /sw.js 404 in 272ms
+ GET /sw.js 404 in 75ms
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 5.2s (1655 modules)
+ GET / 404 in 5770ms
+ GET / 200 in 359ms
+ GET /_next/static/css/app/layout.css?v=1782382865950 404 in 167ms
+ GET /_next/static/chunks/main-app.js?v=1782382865950 404 in 151ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 150ms
+ GET /_next/static/chunks/app/page.js 404 in 149ms
+ GET /_next/static/chunks/app/layout.js 404 in 148ms
+ ○ Compiling /icon.jpg ...
+ ✓ Compiled /icon.jpg in 533ms (820 modules)
+ GET /icon.jpg?a6cbca9bf8fae97b 200 in 676ms
+ GET / 200 in 459ms
+ GET /_next/static/css/app/layout.css?v=1782382870657 404 in 198ms
+ GET /_next/static/chunks/main-app.js?v=1782382870657 404 in 195ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 192ms
+ GET /_next/static/chunks/app/page.js 404 in 190ms
+ GET /_next/static/chunks/app/layout.js 404 in 189ms
+ GET /icon.jpg?a6cbca9bf8fae97b 200 in 43ms
+ GET /icon.jpg?a6cbca9bf8fae97b 200 in 43ms
+ GET / 200 in 108ms
+ GET /_next/static/css/app/layout.css?v=1782382875296 404 in 128ms
+ GET /_next/static/chunks/main-app.js?v=1782382875296 404 in 122ms
+ GET /sw.js 404 in 80ms
+ GET /icon.jpg?a6cbca9bf8fae97b 200 in 47ms
+ GET /icon.jpg?a6cbca9bf8fae97b 200 in 41ms
+ GET /sw.js 404 in 50ms
+ GET / 200 in 106ms
+ GET /_next/static/css/app/layout.css?v=1782382879360 404 in 149ms
+ GET /_next/static/chunks/main-app.js?v=1782382879360 404 in 136ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 135ms
+ GET /_next/static/chunks/app/page.js 404 in 135ms
+ GET /_next/static/chunks/app/layout.js 404 in 134ms
+ GET /icon.jpg?a6cbca9bf8fae97b 200 in 34ms
+ GET /icon.jpg?a6cbca9bf8fae97b 200 in 34ms
+ GET / 200 in 84ms
+ GET /_next/static/css/app/layout.css?v=1782382881311 404 in 146ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 119ms
+ GET /_next/static/chunks/main-app.js?v=1782382881311 404 in 123ms
+ GET /_next/static/chunks/app/layout.js 404 in 117ms
+ GET /_next/static/chunks/app/page.js 404 in 120ms
+ GET /icon.jpg?a6cbca9bf8fae97b 200 in 38ms
+ GET /icon.jpg?a6cbca9bf8fae97b 200 in 37ms
+ GET / 200 in 115ms
+ GET /_next/static/css/app/layout.css?v=1782382908636 404 in 155ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 143ms
+ GET /_next/static/chunks/app/page.js 404 in 142ms
+ GET /_next/static/chunks/main-app.js?v=1782382908636 404 in 140ms
+ GET /_next/static/chunks/app/layout.js 404 in 140ms
+ GET /icon.jpg?a6cbca9bf8fae97b 200 in 43ms
+ GET /icon.jpg?a6cbca9bf8fae97b 200 in 43ms
+ GET / 404 in 30ms
+ GET / 404 in 34ms
+ GET / 404 in 350ms
+ GET / 404 in 233ms
+ GET / 404 in 25ms
+ GET / 404 in 18ms
+ GET / 404 in 30ms
+ GET / 404 in 23ms
+ GET / 404 in 18ms
+ GET / 404 in 21ms
+ GET / 404 in 31ms
+ GET / 404 in 34ms
+ GET / 404 in 15ms
+ GET / 404 in 26ms
+ GET / 404 in 26ms
+ GET / 404 in 27ms
+ GET / 404 in 16ms
+ GET / 200 in 158ms
+ GET / 200 in 209ms
+ GET /icon.jpg?a6cbca9bf8fae97b 404 in 45ms
+ GET /icon.jpg?a6cbca9bf8fae97b 404 in 120ms
+ GET / 200 in 92ms
+ GET /porsche.png 404 in 99ms
+ GET /icon.jpg?a6cbca9bf8fae97b 200 in 31ms

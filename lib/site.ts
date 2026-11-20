@@ -52,6 +52,11 @@ export const services = [
     title: "SEO & Performance",
     description: "Technical foundations that help the right people find you.",
     items: ["On-page SEO", "Core Web Vitals", "Schema markup"]
+  },
+  {
+    title: "Paid Ads Management",
+    description: "Meta, Google and more. Campaigns set up, tracked and optimized to bring in sales.",
+    items: ["Meta & Instagram ads", "Google Search & YouTube ads", "TikTok, LinkedIn & tracking"]
   }
 ]
 
@@ -66,7 +71,9 @@ export const filmService = {
     "Product spots & explainers",
     "AI visuals, voiceover & sound design"
   ],
-  formats: ["16:9", "9:16", "1:1"]
+  formats: ["16:9", "9:16", "1:1"],
+  /** AI UGC still that fills the film frame. Drop your image at public/films/ai-ugc.jpg */
+  cover: "/films/ai-ugc.jpg"
 }
 
 export const process = [

@@ -5,7 +5,7 @@ import { ArrowDown, ArrowRight } from "lucide-react"
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
 import { ContactButton } from "@/components/ContactModal"
-import WaveRibbons from "@/components/motion/WaveRibbons"
+import RibbonShader from "@/components/motion/RibbonShader"
 import { BrandMark } from "@/components/Navbar"
 
 export default function Hero() {
@@ -43,7 +43,7 @@ export default function Hero() {
         style={reduceMotion ? undefined : { scale: artScale }}
         aria-hidden="true"
       >
-        <WaveRibbons className="absolute inset-0 h-full w-full" />
+        <RibbonShader className="absolute inset-0 h-full w-full" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(4,9,30,0.55)_0%,rgba(4,9,30,0.2)_45%,transparent_70%)]" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#040a1e]/70 to-transparent" />
       </motion.div>

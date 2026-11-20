@@ -25,6 +25,21 @@ function Timecode() {
   )
 }
 
+/** AI UGC still filling the film frame; hides itself if the file is missing so the animated sheen shows */
+function FilmCover({ src }: { src: string }) {
+  const [ok, setOk] = useState(true)
+  if (!ok) return null
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={src}
+      alt="AI-generated UGC-style ad still"
+      onError={() => setOk(false)}
+      className="film-cover absolute inset-0 h-full w-full object-cover"
+    />
+  )
+}
+
 export function BookCallButton({ label = "Book a consultation", className = "" }: { label?: string; className?: string }) {
   return (
     <a
@@ -65,7 +80,7 @@ export default function Services() {
           </p>
         </div>
 
-        <ul className="mt-16 grid gap-px overflow-hidden rounded-[6px] bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-16 grid gap-px overflow-hidden rounded-[6px] bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <motion.li
               key={service.title}
@@ -73,7 +88,7 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.9, delay: index * 0.08, ease }}
-              className="group relative flex min-h-[380px] flex-col justify-between overflow-hidden bg-ink p-7 transition-colors duration-500 hover:bg-brand"
+              className={`group relative flex min-h-[360px] flex-col justify-between gap-10 overflow-hidden bg-ink p-7 transition-colors duration-500 hover:bg-brand sm:p-9`}
             >
               <div className="flex items-start justify-between">
                 <span className="font-serif text-[40px] italic leading-none text-sky transition-colors duration-500 group-hover:text-white">
@@ -85,14 +100,14 @@ export default function Services() {
                 />
               </div>
               <div>
-                <h3 className="text-[22px] font-medium leading-tight tracking-tight">{service.title}</h3>
-                <p className="mt-3 text-[14px] leading-[1.65] text-white/65 transition-colors group-hover:text-white/85">
+                <h3 className="text-[clamp(22px,1.9vw,28px)] font-medium leading-tight tracking-tight">{service.title}</h3>
+                <p className="mt-3 max-w-md text-[14px] leading-[1.65] text-white/65 transition-colors group-hover:text-white/85">
                   {service.description}
                 </p>
                 <ul className="mt-6 space-y-2 border-t border-white/10 pt-5 text-[13px] text-white/70 group-hover:border-white/25">
                   {service.items.map((item) => (
                     <li key={item} className="flex items-center gap-2.5">
-                      <span className="h-1 w-1 rounded-full bg-amber" aria-hidden="true" />
+                      <span className="h-1 w-1 flex-none rounded-full bg-amber" aria-hidden="true" />
                       {item}
                     </li>
                   ))}
@@ -100,6 +115,25 @@ export default function Services() {
               </div>
             </motion.li>
           ))}
+          <motion.li
+            initial={reduceMotion ? false : { opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.9, delay: services.length * 0.08, ease }}
+            className="relative flex min-h-[360px] flex-col justify-between gap-10 overflow-hidden bg-brand p-7 sm:p-9"
+          >
+            <div className="orb orb-a right-[-30%] top-[-30%] h-[260px] w-[260px] bg-sky/40" aria-hidden="true" />
+            <span className="relative font-serif text-[40px] italic leading-none text-white">?</span>
+            <div className="relative">
+              <h3 className="text-[clamp(22px,1.9vw,28px)] font-medium leading-tight tracking-tight">
+                Not sure what you need?
+              </h3>
+              <p className="mt-3 max-w-md text-[14px] leading-[1.65] text-white/80">
+                Book a free consultation and we&apos;ll work out the right mix for your goals and budget.
+              </p>
+              <BookCallButton label="Book a consultation" className="mt-6 w-fit bg-white text-ink [--sweep:var(--amber)]" />
+            </div>
+          </motion.li>
         </ul>
 
         {/* Featured: AI Films & Ads */}
@@ -113,7 +147,7 @@ export default function Services() {
           <div className="flex flex-col justify-between gap-10 p-7 sm:p-10 lg:p-14">
             <div>
               <div className="flex items-center gap-3">
-                <span className="font-serif text-[40px] italic leading-none text-sky">05</span>
+                <span className="font-serif text-[40px] italic leading-none text-sky">{String(services.length + 1).padStart(2, "0")}</span>
                 <span className="rounded-full bg-amber px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-ink">
                   New
                 </span>
@@ -138,6 +172,7 @@ export default function Services() {
           <div className="relative min-h-[340px] p-4 sm:p-6 lg:p-8">
             <div className="film-frame relative h-full min-h-[300px] overflow-hidden rounded-[4px] bg-black">
               <div className="film-sheen absolute inset-0" aria-hidden="true" />
+              <FilmCover src={filmService.cover} />
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.65)_100%)]" aria-hidden="true" />
               {/* letterbox bars */}
               <div className="absolute inset-x-0 top-0 h-[9%] bg-black" aria-hidden="true" />

@@ -55,8 +55,8 @@ export const projects: Project[] = [
     featured: true
   },
   {
-    slug: "deomasem-movers",
-    name: "Deomasem Movers",
+    slug: "deomas-movers",
+    name: "Deomas Movers",
     tags: ["WordPress", "SEO"],
     description:
       "Professional moving services company with booking-focused pages, clear service positioning, and local search visibility.",

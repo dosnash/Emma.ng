@@ -11,67 +11,41 @@ type ProjectCardProps = {
   index?: number
 }
 
-const tagStyles = [
-  "bg-[#eff3fd] text-[#2a52c4]",
-  "bg-[#eff3fd] text-[#2a52c4]",
-  "bg-[#eff3fd] text-[#2a52c4]",
-  "bg-[#eff3fd] text-[#2a52c4]"
-]
-
+/** Collection-style card: large cover, then a title row with a quiet link. */
 export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
   const reduceMotion = useReducedMotion()
 
   return (
     <motion.article
-      className="group rounded-2xl bg-white p-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 sm:p-6"
-      initial={reduceMotion ? false : { opacity: 0, y: 22 }}
-      whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-      whileHover={reduceMotion ? undefined : { y: -4 }}
-      viewport={{ once: true, amount: 0.12 }}
-      transition={{ duration: 0.45, delay: Math.min(index * 0.06, 0.24), ease: [0.22, 1, 0.36, 1] }}
+      initial={reduceMotion ? false : { opacity: 0, y: 48 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 1, delay: (index % 2) * 0.12, ease: [0.16, 1, 0.3, 1] }}
     >
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-        <div>
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#2a52c4]">
+      <Link href={`/projects/${project.slug}`} className="group block">
+        <div className="relative aspect-[16/11] overflow-hidden rounded-[6px] bg-mist">
+          <div className="absolute inset-[6%] overflow-hidden rounded-[4px] shadow-[0_30px_60px_-30px_rgba(7,11,26,0.5)] transition-transform duration-[1.1s] ease-out-expo group-hover:scale-[1.035]">
+            <ProjectImage
+              project={project}
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              className="object-cover object-top"
+            />
+          </div>
+          <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-[11px] font-medium text-ink backdrop-blur">
             {project.industry}
-          </p>
-          <h3 className="mt-2 text-xl font-extrabold tracking-tight text-[#0a0a0a]">
+          </span>
+          <span className="absolute bottom-4 right-4 grid h-12 w-12 translate-y-3 place-items-center rounded-full bg-brand text-white opacity-0 transition-all duration-500 ease-out-expo group-hover:translate-y-0 group-hover:opacity-100">
+            <ArrowUpRight className="h-5 w-5" aria-hidden="true" />
+          </span>
+        </div>
+        <div className="mt-5 flex items-baseline justify-between gap-6">
+          <h3 className="text-[clamp(26px,2.6vw,40px)] font-normal tracking-[-0.04em] text-ink">
             {project.name}
           </h3>
+          <span className="shrink-0 text-[13px] text-muted">{project.tags.join(" · ")}</span>
         </div>
-        <Link
-          href={`/projects/${project.slug}`}
-          className="inline-flex items-center gap-2 text-sm font-bold text-[#2a52c4] transition hover:text-[#1c3fa6]"
-        >
-          View details
-          <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-        </Link>
-      </div>
-
-      <div className="mt-4 flex flex-wrap gap-2">
-        {project.tags.map((tag, tagIndex) => (
-          <span
-            key={tag}
-            className={`rounded-full px-3 py-1 text-xs font-bold ${tagStyles[tagIndex % tagStyles.length]}`}
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
-
-      <p className="mt-5 max-w-3xl text-sm leading-6 text-[#52525b]">{project.description}</p>
-
-      <div className="mt-6 w-full overflow-hidden rounded-xl bg-[#eff3fd] border border-[#2a52c4]/10 p-3">
-        <div className="relative aspect-video w-full overflow-hidden rounded-md bg-white">
-          <ProjectImage
-            project={project}
-            sizes="(min-width: 1024px) 456px, 100vw"
-            className={`object-cover object-top transition duration-500 group-hover:scale-[1.03] ${
-              index % 2 === 0 ? "" : "brightness-[0.98]"
-            }`}
-          />
-        </div>
-      </div>
+        <p className="mt-2 max-w-xl text-[14px] leading-[1.65] text-muted">{project.description}</p>
+      </Link>
     </motion.article>
   )
 }

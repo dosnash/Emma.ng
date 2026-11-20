@@ -25,9 +25,9 @@ export default function ProjectImage({
 
   if (failed) {
     return (
-      <div className="absolute inset-0 grid place-items-center bg-gradient-to-br from-[#fff7f5] to-[#ffe1d9] p-6 text-center">
+      <div className="absolute inset-0 grid place-items-center bg-gradient-to-br from-[#f5f7fd] to-[#e8edfa] p-6 text-center">
         <div>
-          <span className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-[#ff5535] text-base font-extrabold text-white">
+          <span className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-[#2a52c4] text-base font-extrabold text-white">
             {project.name
               .split(" ")
               .map((word) => word[0])

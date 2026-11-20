@@ -124,7 +124,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
           <div className="mx-auto mt-12 max-w-lg rounded-2xl border border-black/10 bg-white p-6 sm:mt-20 sm:p-8">
             <div className="mb-6 flex items-start justify-between gap-4">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#ff5535]">
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#2a52c4]">
                   Contact
                 </p>
                 <h2 className="mt-2 text-2xl font-bold text-[#0a0a0a]">
@@ -148,7 +148,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
                   type="text"
                   value={fields.fullName}
                   onChange={(event) => updateField("fullName", event.target.value)}
-                  className="mt-2 w-full rounded-xl border border-[#ffd6ce] bg-[#fff7f5] px-4 py-3 text-[#0a0a0a] outline-none transition focus:border-[#ff5535] focus:bg-white"
+                  className="mt-2 w-full rounded-xl border border-[#d5def6] bg-[#f5f7fd] px-4 py-3 text-[#0a0a0a] outline-none transition focus:border-[#2a52c4] focus:bg-white"
                 />
               </label>
 
@@ -158,7 +158,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
                   type="email"
                   value={fields.email}
                   onChange={(event) => updateField("email", event.target.value)}
-                  className="mt-2 w-full rounded-xl border border-[#ffd6ce] bg-[#fff7f5] px-4 py-3 text-[#0a0a0a] outline-none transition focus:border-[#ff5535] focus:bg-white"
+                  className="mt-2 w-full rounded-xl border border-[#d5def6] bg-[#f5f7fd] px-4 py-3 text-[#0a0a0a] outline-none transition focus:border-[#2a52c4] focus:bg-white"
                 />
               </label>
 
@@ -170,7 +170,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
                   rows={4}
                   value={fields.project}
                   onChange={(event) => updateField("project", event.target.value)}
-                  className="mt-2 w-full resize-none rounded-xl border border-[#ffd6ce] bg-[#fff7f5] px-4 py-3 text-[#0a0a0a] outline-none transition focus:border-[#ff5535] focus:bg-white"
+                  className="mt-2 w-full resize-none rounded-xl border border-[#d5def6] bg-[#f5f7fd] px-4 py-3 text-[#0a0a0a] outline-none transition focus:border-[#2a52c4] focus:bg-white"
                 />
               </label>
 
@@ -179,7 +179,7 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
                 <select
                   value={fields.budget}
                   onChange={(event) => updateField("budget", event.target.value)}
-                  className="mt-2 w-full rounded-xl border border-[#ffd6ce] bg-[#fff7f5] px-4 py-3 text-[#0a0a0a] outline-none transition focus:border-[#ff5535] focus:bg-white"
+                  className="mt-2 w-full rounded-xl border border-[#d5def6] bg-[#f5f7fd] px-4 py-3 text-[#0a0a0a] outline-none transition focus:border-[#2a52c4] focus:bg-white"
                 >
                   <option>Under $500</option>
                   <option>$500-$1,000</option>
@@ -191,13 +191,13 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
               <button
                 type="button"
                 onClick={handleSubmit}
-                className="w-full rounded-full bg-[#ff5535] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#e8482c]"
+                className="w-full rounded-full bg-[#2a52c4] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#1f43ad]"
               >
                 Send Message
               </button>
 
               {sent ? (
-                <p className="rounded-xl bg-[#fff1ee] px-4 py-3 text-sm font-semibold text-[#a52f1d]">
+                <p className="rounded-xl bg-[#e8edfa] px-4 py-3 text-sm font-semibold text-[#14266a]">
                   Message sent! I&apos;ll get back to you within 24 hours.
                 </p>
               ) : null}

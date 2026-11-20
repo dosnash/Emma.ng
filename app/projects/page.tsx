@@ -1,67 +1,29 @@
 import type { Metadata } from "next"
-import { ArrowRight } from "lucide-react"
-import { ContactButton } from "@/components/ContactModal"
-import MotionReveal from "@/components/MotionReveal"
+import PageIntro from "@/components/PageIntro"
 import ProjectCard from "@/components/ProjectCard"
 import { projects } from "@/lib/projects"
 
 export const metadata: Metadata = {
   title: "Projects & Case Studies",
   description:
-    "Browse Emmanuel Ovansa's portfolio of conversion-focused websites and web apps — SaaS, e-commerce, and service platforms built with Next.js, React, and WordPress."
+    "Browse Emmanuel Ovansa's portfolio of conversion-focused websites and web apps: SaaS, e-commerce and service platforms built with Next.js, React and WordPress."
 }
 
 export default function ProjectsPage() {
   return (
     <>
-      <section className="overflow-hidden bg-white px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <MotionReveal className="relative max-w-7xl overflow-hidden pb-8">
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#2a52c4]">
-              Selected work
-            </p>
-            <h1 className="mt-5 text-3xl font-extrabold tracking-tight text-[#0a0a0a] sm:text-4xl">
-              Projects & case studies
-            </h1>
-            <div className="heading-ghost pointer-events-none absolute bottom-0 left-0 flex w-max gap-8 text-2xl font-extrabold tracking-tight text-black/[0.04] sm:text-4xl">
-              <span>Projects & case studies</span>
-              <span>Projects & case studies</span>
-              <span>Projects & case studies</span>
+      <PageIntro eyebrow={`Selected work · ${projects.length} projects`} title="Websites that" accent="do the work.">
+        Websites, e-commerce builds, SaaS pages and service platforms shipped for real brands
+        across the UK, Canada, the US and beyond.
+      </PageIntro>
+
+      <section className="gutter bg-paper pb-32">
+        <div className="grid gap-x-8 gap-y-20 border-t border-ink/10 pt-16 md:grid-cols-2">
+          {projects.map((project, index) => (
+            <div key={project.slug} className={index % 2 === 1 ? "md:mt-28" : ""}>
+              <ProjectCard project={project} index={index} />
             </div>
-          </MotionReveal>
-
-          <p className="mt-2 max-w-3xl text-base leading-7 text-[#52525b]">
-            Explore selected websites, e-commerce builds, SaaS pages, and service platforms
-            shipped for real brands.
-          </p>
-
-          {/* <div className="mt-8 rounded-lg border border-[#ffd6ce] bg-[#fff1ee] px-6 py-5 text-center">
-            <p className="text-lg font-bold italic leading-8 text-[#a52f1d]">
-              A portfolio of conversion-focused websites across WordPress, WooCommerce, React,
-              Next.js, SEO, and business service platforms.
-            </p>
-          </div> */}
-
-          <div className="mt-10 grid gap-4 lg:grid-cols-2">
-            {projects.map((project, index) => (
-              <ProjectCard key={project.slug} project={project} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-4 pb-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl rounded-[24px] border border-[#2a52c4]/20 bg-[#eff3fd] px-6 py-12 text-center sm:px-10">
-          <h2 className="text-2xl font-extrabold tracking-tight text-[#0a0a0a] sm:text-3xl">
-            Ready to start your project?
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#52525b]">
-            Let&apos;s build something polished, fast, and easy for your customers to use.
-          </p>
-          <ContactButton className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#2a52c4] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1c3fa6]">
-            Get Started
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </ContactButton>
+          ))}
         </div>
       </section>
     </>
